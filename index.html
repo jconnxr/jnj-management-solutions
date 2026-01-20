@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JNJ Management Solutions | Oklahoma Small Business Support</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #1f2a44;
+        --teal: #2f8f7b;
+        --mist: #f5f1ea;
+        --slate: #2f3442;
+        --accent: #f5b25c;
+        --shadow: 0 18px 40px rgba(31, 42, 68, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        background: var(--mist);
+        color: var(--slate);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        background: radial-gradient(circle at top, #293457, var(--navy));
+        color: #fff;
+        padding: 2.5rem 5vw 4rem;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      nav .logo {
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        font-size: 0.95rem;
+      }
+
+      nav button {
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        background: transparent;
+        color: #fff;
+        padding: 0.6rem 1.4rem;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      nav button:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.3rem, 4vw, 3.3rem);
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        max-width: 520px;
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+
+      .hero .cta-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-primary,
+      .cta-secondary {
+        padding: 0.9rem 1.6rem;
+        border-radius: 10px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .cta-primary {
+        background: var(--accent);
+        color: #1d1d1d;
+      }
+
+      .cta-secondary {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .hero-card {
+        background: #fff;
+        color: var(--slate);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .hero-card strong {
+        color: var(--navy);
+      }
+
+      .hero-card .stat {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .stat span {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--teal);
+      }
+
+      main {
+        padding: 4rem 5vw 5rem;
+      }
+
+      section {
+        margin-bottom: 4rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        color: var(--navy);
+        margin-bottom: 1rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: #fff;
+        padding: 1.6rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 20px rgba(31, 42, 68, 0.08);
+      }
+
+      .card h3 {
+        margin-bottom: 0.6rem;
+        color: var(--navy);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        background: rgba(47, 143, 123, 0.15);
+        color: var(--teal);
+        padding: 0.3rem 0.8rem;
+        border-radius: 999px;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+      }
+
+      .timeline {
+        background: linear-gradient(135deg, rgba(47, 143, 123, 0.1), rgba(245, 178, 92, 0.12));
+        padding: 2rem;
+        border-radius: 20px;
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .timeline-item strong {
+        color: var(--navy);
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 2rem;
+        align-items: center;
+      }
+
+      form {
+        display: grid;
+        gap: 1rem;
+        background: #fff;
+        padding: 1.8rem;
+        border-radius: 16px;
+        box-shadow: 0 15px 30px rgba(31, 42, 68, 0.1);
+      }
+
+      label {
+        display: grid;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--navy);
+      }
+
+      input,
+      textarea {
+        border: 1px solid #d3dde1;
+        border-radius: 10px;
+        padding: 0.7rem 0.8rem;
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      form button {
+        background: var(--teal);
+        color: #fff;
+        border: none;
+        padding: 0.8rem 1.3rem;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .form-note {
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 5vw 3rem;
+        color: #6b7280;
+      }
+
+      @media (max-width: 720px) {
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">JNJ Management Solutions</div>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#approach">How We Work</a></li>
+          <li><a href="#insights">Local Impact</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="schedule-btn" type="button">Book a Call</button>
+      </nav>
+      <div class="hero">
+        <div>
+          <div class="pill">Oklahoma Small Business Support</div>
+          <h1>Practical digital support for Oklahoma small businesses.</h1>
+          <p>
+            We help local owners launch modern websites, set up customer booking, and keep their
+            business systems simple. From Google Business Profile optimization to CRM management,
+            JNJ Management Solutions delivers hands-on support that fits your budget and timeline.
+          </p>
+          <div class="cta-group">
+            <button class="cta-primary" type="button">See Our Services</button>
+            <button class="cta-secondary" type="button">Get a Quick Quote</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div>
+            <strong>Built for Main Street</strong>
+            <p>Friendly, clear steps to get your website and customer flow working fast.</p>
+          </div>
+          <div class="stat">
+            <span>24/7</span>
+            <div>
+              <strong>Always-On Booking</strong>
+              <p>Let customers schedule anytime with simple, mobile-friendly flows.</p>
+            </div>
+          </div>
+          <div class="stat">
+            <span>OKC</span>
+            <div>
+              <strong>Oklahoma Roots</strong>
+              <p>We support shops, trades, and service teams across the state.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="services">
+        <h2 class="section-title">Small business services that make daily work easier</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="pill">Web Presence</div>
+            <h3>Website Builds & Refreshes</h3>
+            <p>
+              Clean, mobile-first sites that tell your story, highlight services, and make it easy
+              for customers to reach you.
+            </p>
+          </article>
+          <article class="card">
+            <div class="pill">Bookings</div>
+            <h3>Customer Scheduling</h3>
+            <p>
+              Simple booking flows for appointments, estimates, or pickups that connect to your
+              calendar and reduce phone tag.
+            </p>
+          </article>
+          <article class="card">
+            <div class="pill">Local Visibility</div>
+            <h3>Google Business Optimization</h3>
+            <p>
+              Listings, reviews, and local SEO improvements that help neighbors find you fast.
+            </p>
+          </article>
+          <article class="card">
+            <div class="pill">CRM</div>
+            <h3>CRM Setup & Management</h3>
+            <p>
+              We build and maintain CRMs that track leads, follow-ups, and customer history without
+              overwhelming your team.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="approach">
+        <h2 class="section-title">A simple, friendly process</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Listen</strong>
+            <p>We learn your goals, current tools, and what is slowing your day down.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Build</strong>
+            <p>We create a website, booking flow, or CRM setup that fits how you work.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Launch</strong>
+            <p>We go live quickly and make sure your team is comfortable using the tools.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Support</strong>
+            <p>Need updates or new features? We stick around to keep everything running smoothly.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights">
+        <h2 class="section-title">Helping Oklahoma businesses stand out</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Local-first marketing</h3>
+            <p>
+              We tune your Google Business Profile, highlight local keywords, and make sure your
+              hours, services, and photos shine.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Customer follow-ups that feel personal</h3>
+            <p>
+              Automated reminders and CRM notes keep you in touch without losing the personal touch.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Ongoing partnership</h3>
+            <p>
+              From seasonal updates to new services, we are a local partner you can call when you
+              need changes fast.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div>
+          <h2 class="section-title">Let’s help your Oklahoma business grow</h2>
+          <p>
+            Tell us about your business and we will share a simple plan and estimate within two
+            business days.
+          </p>
+          <p><strong>Email:</strong> hello@jnjmanagementsolutions.com</p>
+          <p><strong>Phone:</strong> (405) 555-0134</p>
+        </div>
+        <form id="contact-form">
+          <label>
+            Full Name
+            <input name="name" placeholder="Jordan Lee" required />
+          </label>
+          <label>
+            Work Email
+            <input name="email" type="email" placeholder="jordan@company.com" required />
+          </label>
+          <label>
+            What do you need help with?
+            <textarea
+              name="message"
+              placeholder="Website refresh, booking setup, Google listing, CRM support, etc."
+              required
+            ></textarea>
+          </label>
+          <button type="submit">Request a consult</button>
+          <div class="form-note" id="form-note" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2024 JNJ Management Solutions. Proudly serving Oklahoma small businesses.</p>
+    </footer>
+
+    <script>
+      const form = document.getElementById("contact-form");
+      const formNote = document.getElementById("form-note");
+      const scheduleButton = document.getElementById("schedule-btn");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formNote.textContent = "Thanks! We will be in touch soon with next steps.";
+        form.reset();
+      });
+
+      scheduleButton.addEventListener("click", () => {
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
